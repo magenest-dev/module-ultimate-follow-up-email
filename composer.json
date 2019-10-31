@@ -1,0 +1,25 @@
+{
+    "name": "magenest/module-ultimate-follow-up-email",
+    "description": "N/A",
+    "require": {
+        "magenest/core": "*"
+    },
+    "type": "magento2-module",
+    "version": "100.3.1",
+    "license": [
+        "BSD-3-Clause"
+    ],
+    "authors": [
+        {
+            "name": "Magenest JSC"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenest\\UltimateFollowupEmail\\": ""
+        }
+    }
+}

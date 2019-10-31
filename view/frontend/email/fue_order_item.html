@@ -1,0 +1,40 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+
+ Use these variables to echo data to the template.
+ E.g: item.getSku() to get the item's sku.
+-->
+<!--@subject {{trans "Order Item"}} @-->
+<!--@vars {
+"var item":"Quote Item",
+"var itemProduct":"Quote Item Product",
+"var order":"Order"
+} @-->
+<table style="float:left; margin-right: 10px" class="fue-order-item">
+    <tr>
+        <td class="product-image-container">
+            <a href="{{var itemProduct.getProductUrl()}}" target="_blank">
+                <img src="{{var product_image_url}}" height="150" width="120">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="product-name-container">
+            <span class="product-name">{{var item.getName()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="product-price-container">
+            <p style="font-weight: bold">{{var item_price}}</p>
+        </td>
+    </tr>
+</table>

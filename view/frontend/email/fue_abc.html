@@ -1,0 +1,24 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+-->
+<!--@subject {{trans "Abandoned Cart"}} @-->
+<ul class="cart-container" style='list-style: none; margin:0; padding: 0;'>
+    <li class="cart-items-list" style=" float: left;margin: 0; display: inline;">
+        {{var cart_items}}
+    </li>
+    <li style="list-style:none; clear: both;"></li>
+</ul>
+
+<p>Items</p>
+
+{{var cart|raw}}
+

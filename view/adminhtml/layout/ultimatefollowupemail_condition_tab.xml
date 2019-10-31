@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tabs" name="ultimatefollowupemail_rule_new_tabs">
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Main" name="ultimatefollowupemail_rule_new_tab_main"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Conditions" name="ultimatefollowupemail_rule_new_tab_conditions"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\CartCondition" name="promo_sales_edit_tab_conditions"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Emails" name="ultimatefollowupemail_rule_new_tab_emails"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Coupon" name="ultimatefollowupemail_rule_new_tab_coupon"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_main</argument>
+                </action>
+                <!--   <action method="addTab">
+                       <argument name="name" xsi:type="string">conditions_section</argument>
+                       <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_conditions</argument>
+                   </action>-->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">cartconditions_section</argument>
+                    <argument name="block" xsi:type="string">promo_sales_edit_tab_conditions</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">email_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_emails</argument>
+                </action>
+
+
+
+            </block>
+            <!--<block class="Magento\Backend\Block\Template" template="Magento_SalesRule::promo/salesrulejs.phtml" name="ultimatefollowupemail_rule_edit_jsinit"/>-->
+            <referenceContainer name="js">
+                <block class="Magento\Backend\Block\Template" template="Magenest_UltimateFollowupEmail::rule/js.phtml" name="ultimatefollowupemail_rule_add_jsinit"/>
+            </referenceContainer>
+            <block class="Magento\Backend\Block\Template" template="Magento_SalesRule::promo/salesrulejs.phtml" name="promo_quote_edit_jsinit"/>
+
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add" name="ultimatefollowupemail_rule_new"/>
+
+        </referenceContainer>
+    </body>
+</page>

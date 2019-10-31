@@ -1,0 +1,21 @@
+@magenest-fue-icons-admin__font-name-path: 'Magenest_UltimateFollowupEmail::fonts/icomoon';
+@magenest-fue-icons-admin__font-name : 'UltimateFollowupEmail';
+
+.lib-font-face(
+  @family-name: @magenest-fue-icons-admin__font-name,
+  @font-path: @magenest-fue-icons-admin__font-name-path,
+  @font-weight: normal,
+  @font-style: normal
+);
+
+.admin__menu .item-ultimatefollowupemail.parent.level-0 > a:before,
+.admin__menu .item-ultimatefollowupemail.level-0 > a:before {
+  font-family: @magenest-fue-icons-admin__font-name;
+  font-size: 4.5rem;
+  line-height: 2px;
+  content: "\e900";
+  padding: 16px 0;
+  text-align: center;
+  color: #cccccc;
+  margin: 0 auto 0.75rem;
+}

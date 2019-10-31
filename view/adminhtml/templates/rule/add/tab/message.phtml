@@ -1,0 +1,116 @@
+<?php
+/**
+ * Created by Magenest
+ * User: Eric Quach
+ * Date: 14/06/2016
+ * Time: 10:07
+ */
+/** @var  $block \Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Message */
+$smsCollection = $block->getSmsCollection();
+?>
+
+<h3><?php echo __('SMS')  ?></h3>
+
+<table class="sms-fue-tbl data-grid" data-role="sms-table">
+
+    <thead class="data-grid email-chain">
+    <tr>
+        <td><b><?php echo __('Message Content')  ?></b></td>
+        <td><b><?php echo __('Day')  ?></b></td>
+        <td><b><?php echo __('Hour')  ?></b></td>
+        <td><b><?php echo __('Minute')  ?></b></td>
+    </tr>
+    </thead>
+
+    <tbody data-role="sms-tbody" class="sms-tbody">
+    <?php if (is_object($smsCollection) && $smsCollection->count() > 0) { ?>
+
+        <?php foreach ($smsCollection as $sms) { ?>
+
+            <tr data-role="sms-tr">
+
+                <td data-role="sms-td-message">
+                    <input type="hidden"  name="sms[<?php echo $sms->getId()  ?>][id]" value="<?php echo $sms->getId()  ?>">
+
+                    <input type="hidden"  name="sms[<?php echo $sms->getId()  ?>][is_new]" value="0">
+
+                    <textarea name="sms[<?php echo $sms->getId()  ?>][message]" > <?php echo $sms->getContent() ?></textarea>
+
+                </td>
+
+
+
+                <td data-role="sms-td-message">
+                    <input type="number" min="0" name="sms[<?php echo $sms->getId()  ?>][day]" value="<?php echo $sms->getData('day') ?>">
+
+                </td>
+
+                <td data-role="sms-td-message">
+                    <input type="number" min="0"  name="sms[<?php echo $sms->getId()  ?>][hour]" value="<?php echo $sms->getData('hour') ?>">
+
+                </td>
+
+                <td data-role="sms-td-message">
+                    <input type="number" min="0"  name="sms[<?php echo $sms->getId()  ?>][min]" value="<?php echo $sms->getData('min') ?>">
+
+                </td>
+
+                <td data-role="sms-td-delete">
+                    <input  type="hidden" name="sms[<?php echo $sms->getId()  ?>][is_deleted]" data-role="delete-input">
+                    <button type="button" class="add-btn action-default" data-role="sms-del" data-idsms="<?php echo $sms->getId() ?>" ><?php echo __('Delete') ?></button>
+
+                </td>
+            </tr>
+
+        <?php } ?>
+
+    <?php } ?>
+
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <td>
+            <div data-role="sms-add"><button type="button" class="add-btn action-default"><?php echo __('Add')  ?></button></div>
+
+        </td>
+    </tr>
+    </tfoot>
+</table>
+
+<script type="text/html" id="newsms-template" data-role="sms-row-template">
+    <tr data-role="sms-tr">
+
+        <td>
+            <input type="hidden" name="sms[<%=id %>][id]" value="<%=id %>">
+
+            <input type="hidden" name="sms[<%=id %>][is_new]" value="1">
+            <textarea name="sms[<%=id %>][message]"> </textarea>
+        </td>
+
+
+
+        <td data-role="sms-td-message">
+            <input type="number" min="0" name="sms[<%=id %>][day]" value="">
+
+        </td>
+
+        <td data-role="sms-td-message">
+            <input type="number" min="0"  name="sms[<%=id %>][hour]" value="">
+
+        </td>
+
+        <td data-role="sms-td-message">
+            <input type="number" min="0"  name="sms[<%=id %>][min]" >
+
+        </td>
+
+        <td data-role="sms-td-delete">
+            <input  type="hidden" name="sms[<%=id %>][is_deleted]" data-role="delete-input" >
+            <button type="button" class="add-btn action-default" data-role="sms-del" data-idsms="<%= id %>" ><?php echo __('Delete') ?></button></span>
+
+        </td>
+    </tr>
+
+</script>

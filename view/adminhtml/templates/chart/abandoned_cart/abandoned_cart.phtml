@@ -1,0 +1,54 @@
+<?php /** @var $block \Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\AbandonedCart */ ?>
+<?php
+if (!$block->getAbandonedCarts()) {
+    echo '<div class=\'message message-warning warning\'>There are no abandoned carts for this period of time.</div>';
+} else {
+    ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?php /* @escapeNotVerified */
+                echo 'Abandoned Cart Line Chart' ?></span>
+        </div>
+        <?php if ($block->getPeriodFromParam() || $block->getPeriodToParam()) : ?>
+            <div>
+                <?php echo $block->getPeriodFromParam() ? '(From: ' . $block->getPeriodFromParam() : '(' ?>
+                <?php echo $block->getPeriodToParam() ? ' To: ' . $block->getPeriodToParam() . ')' : ')' ?>
+            </div>
+        <?php endif; ?>
+        <div class="admin__page-section-content">
+            <div id="abandoned_cart_line_chart" style="clear: both;"></div>
+        </div>
+    </section>
+
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+        <span class="title"><?php /* @escapeNotVerified */
+            echo __('Abandoned Cart Rates') ?></span>
+        </div>
+        <?php if ($block->getPeriodFromParam() || $block->getPeriodToParam()) : ?>
+            <div>
+                <?php echo $block->getPeriodFromParam() ? '(From: ' . $block->getPeriodFromParam() : '(' ?>
+                <?php echo $block->getPeriodToParam() ? ' To: ' . $block->getPeriodToParam() . ')' : ')' ?>
+            </div>
+        <?php endif; ?>
+        <div class="admin__page-section-content" style="width: 100%; margin: auto">
+            <div id="abandoned_cart_chart" style="float: left"></div>
+            <div id="guest_abandoned_cart_chart" style="float: left"></div>
+            <div id="repurchased_cart_chart" style="float: left"></div>
+        </div>
+    </section>
+    <?php
+}
+?>
+<script>
+    require([
+        "jquery"
+    ], function ($) {
+        $(document).ready(function () {
+            getAbandonedCartChart();
+            getGuestAbandonedCartChart();
+            getRepurchasedCartChart();
+            getAbandonedCartLineChart();
+        });
+    })
+</script>

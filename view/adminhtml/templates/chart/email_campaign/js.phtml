@@ -1,0 +1,114 @@
+<?php
+/** @var $block \Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\EmailCampaign */
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    getOpeningRatesChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Type');
+            data.addColumn('number', 'Value');
+            data.addRows([
+                <?php foreach($block->getOpeningRatesData() as $key => $value): ?>
+                ['<?php echo $key ?>', <?php echo $value ?>],
+                <?php endforeach; ?>
+            ]);
+            var options = {
+                'legend': {position: 'bottom', textStyle: {color: 'black', fontSize: 14}},
+                'title': 'Opening Rates',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                'width': 500,
+                'height': 400,
+                tooltip: {textStyle: {color: '#FF0000'}, showColorCode: true},
+                slices: {
+                    0: {color: '#4876AD'},
+                    1: {color: '#1F497D'}
+                }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('opening_rates_chart'));
+            chart.draw(data, options);
+        }
+    };
+    getClickingRatesChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Type');
+            data.addColumn('number', 'Value');
+            data.addRows([
+                <?php foreach($block->getClickingRatesData() as $key => $value): ?>
+                ['<?php echo $key ?>', <?php echo $value ?>],
+                <?php endforeach; ?>
+            ]);
+            var options = {
+                'legend': {
+                    position: 'bottom',
+                    textStyle: {color: 'black', fontSize: 14}
+                },
+                'title': 'Clicking Rates',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                'width': 500,
+                'height': 400,
+                tooltip: {
+                    textStyle: {color: '#FF0000'},
+                    showColorCode: true
+                },
+                slices: {
+                    0: {color: '#4876AD'},
+                    1: {color: '#1F497D'}
+                }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('clicking_rates_chart'));
+            chart.draw(data, options);
+        }
+    };
+    getEmailsLineData = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Date', 'Emails', 'Openeds', 'Clicks'],
+                <?php foreach ($block->getEmailsLineData() as $line): ?>
+                [
+                    '<?php echo $line['send_at'] ?>',
+                    <?php echo $line['count'] ?>,
+                    <?php echo $line['opened_count'] ?>,
+                    <?php echo $line['click_count'] ?>
+                ],
+                <?php endforeach; ?>
+            ]);
+
+            var options = {
+                title: 'Emails',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                curveType: 'none',
+                animation: {
+                    startup: true,
+                    duration: 2000,
+                    easing: 'in'
+                },
+                'legend': {
+                    position: 'bottom',
+                    textStyle: {color: 'black', fontSize: 14}
+                }
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('emails_line_chart'));
+
+            chart.draw(data, options);
+        }
+    }
+</script>

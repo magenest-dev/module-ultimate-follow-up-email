@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Email\Block\Adminhtml\Template\Edit\Form">
+        <plugin name="ultimatefollowupemail" type="\Magenest\UltimateFollowupEmail\Block\Plugin\Adminhtml\Template\Edit\Form"/>
+    </type>
+</config>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_UltimateFollowupEmail::css/style.css"/>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tabs" name="ultimatefollowupemail_rule_new_tabs">
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Main" name="ultimatefollowupemail_rule_new_tab_main"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Conditions" name="ultimatefollowupemail_rule_new_tab_conditions"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\CartCondition" name="promo_sales_edit_tab_conditions"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Emails" name="ultimatefollowupemail_rule_new_tab_emails">
+                    <block name="gallery" class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Email\Media\Gallery">
+                        <arguments>
+                            <argument name="config" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Images</item>
+                                <item name="collapsible" xsi:type="boolean">true</item>
+                                <item name="opened" xsi:type="boolean">false</item>
+                                <item name="sortOrder" xsi:type="string">22</item>
+                                <item name="canShow" xsi:type="boolean">true</item>
+                                <item name="componentType" xsi:type="string">fieldset</item>
+                            </argument>
+                        </arguments>
+                        <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Email\Media\Gallery\Content" as="content">
+                        </block>
+                    </block>
+                </block>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Coupon" name="ultimatefollowupemail_rule_new_tab_coupon"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\GoogleAnalytic" name="ultimatefollowupemail_rule_new_tab_ga"/>
+                <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Message" name="ultimatefollowupemail_rule_new_tab_message"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_main</argument>
+                </action>
+                <!--   <action method="addTab">
+                       <argument name="name" xsi:type="string">conditions_section</argument>
+                       <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_conditions</argument>
+                   </action>-->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">cartconditions_section</argument>
+                    <argument name="block" xsi:type="string">promo_sales_edit_tab_conditions</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">email_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_emails</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">message_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_message</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">ga_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_ga</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">coupon_section</argument>
+                    <argument name="block" xsi:type="string">ultimatefollowupemail_rule_new_tab_coupon</argument>
+                </action>
+
+
+
+            </block>
+            <!--<block class="Magento\Backend\Block\Template" template="Magento_SalesRule::promo/salesrulejs.phtml" name="ultimatefollowupemail_rule_edit_jsinit"/>-->
+            <referenceContainer name="js">
+                <block class="Magento\Backend\Block\Template" template="Magenest_UltimateFollowupEmail::rule/js.phtml" name="ultimatefollowupemail_rule_add_jsinit"/>
+            </referenceContainer>
+            <block class="Magento\Backend\Block\Template" template="Magento_SalesRule::promo/salesrulejs.phtml" name="promo_quote_edit_jsinit"/>
+
+        </referenceContainer>
+
+    </body>
+</page>

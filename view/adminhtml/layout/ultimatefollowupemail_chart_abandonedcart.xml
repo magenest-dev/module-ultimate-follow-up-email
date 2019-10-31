@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--<css src="Magenest_UltimateFollowupEmail::report.css"/>-->
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\AbandonedCart" name="period_filter" template="chart/period_filter.phtml"/>
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\AbandonedCart" name="charts" template="chart/abandoned_cart/abandoned_cart.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="js">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\AbandonedCart" name="charts_js" template="Magenest_UltimateFollowupEmail::chart/abandoned_cart/js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

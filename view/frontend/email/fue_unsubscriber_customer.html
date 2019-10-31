@@ -1,0 +1,22 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+-->
+<!--@subject {{trans "Unsubscriber Customer "}} @-->
+{{template config_path="design/email/header_template"}}
+
+{{trans "You have been unsubscribed from the newsletter."}}
+
+<p>{{var customerName}}</p>
+
+<p>{{var customerLastName}}</p>
+
+{{template config_path="design/email/footer_template"}}

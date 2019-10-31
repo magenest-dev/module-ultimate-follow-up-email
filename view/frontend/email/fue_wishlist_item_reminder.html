@@ -1,0 +1,24 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+-->
+<!--@subject {{trans "Wishlist Item Reminder "}} @-->
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "%customer_name wants to share this Wish List from %store_name with you:" customer_name=$customerName store_name=$store.getFrontendName()}}</p>
+
+{{var customerName}}
+<p>{{trans "Product added to cart"}}</p>
+{{var wishlistProduct|raw}}
+
+<!--<p><a href="{{var viewOnSiteLink}}">{{trans "View all Wish List items"}}</a></p>-->
+
+{{template config_path="design/email/footer_template"}}

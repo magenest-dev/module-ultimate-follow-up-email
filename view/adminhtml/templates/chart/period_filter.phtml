@@ -1,0 +1,55 @@
+<div class="range" id="period-range" style="margin-bottom: 35px">
+    <h4>Reports for specific dates: </h4>
+    <span class="field-row">
+        <label for="period-from" class="admin__control-support-text">
+            <span><?php /* @escapeNotVerified */ echo __('From') ?>:</span>
+        </label>
+        <input type="text" class="input-text no-changes admin__control-text" name="period[from]" id="period-from" value="<?php echo $block->getPeriodFromParam() ?>" placeholder="From">
+    </span>
+    <span class="field-row">
+        <label for="period-to" class="admin__control-support-text">
+            <span><?php /* @escapeNotVerified */ echo __('To') ?>:</span>
+        </label>
+            <input type="text" class="input-text no-changes admin__control-text" name="period[to]" id="period-to" value="<?php echo $block->getPeriodToParam() ?>" placeholder="To">
+    </span>
+    <button id="period-submit" type="button" class="primary">Submit</button>
+</div>
+<script>
+    require([
+        "jquery",
+        "mage/calendar"
+    ], function ($) {
+        $(document).ready(function () {
+            initDateRange();
+            initSubmitPeriodListener();
+        });
+
+        function initSubmitPeriodListener(){
+            $("#period-submit").on('click', function() {
+                var from,to;
+                from = $("#period-from").val();
+                to = $("#period-to").val();
+                if (!!from || !!to) {
+                    from = !!from?from:"";
+                    to = !!to?to:"";
+                    window.location.href = "<?php echo $block->getUrl('*/*/*'); ?>"+"?from="+from+"&to="+to
+                }
+            })
+        }
+
+        function initDateRange() {
+            $("#period-range").dateRange({
+                dateFormat: "d-M-yy",
+                timeFormat: "",
+                showsTime: false,
+                buttonText: "Date selector",
+                from: {
+                    id: "period-from"
+                },
+                to: {
+                    id: "period-to"
+                }
+            })
+        }
+    });
+</script>

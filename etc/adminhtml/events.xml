@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+
+    <event name="layout_load_before"> <!-- triggered right after layout is loaded -->
+        <observer name="ultimatefollowupemail_layout_condition" instance="Magenest\UltimateFollowupEmail\Observer\Layout\Condition" />
+    </event>
+    <event name="followup_email_cancel_trigger"> <!-- triggered right after layout is loaded -->
+        <observer name="ultimatefollowupemail_add_cancel_condition" instance="Magenest\UltimateFollowupEmail\Observer\Layout\Cancel" />
+    </event>
+    <event name="config_data_save_commit_after">
+        <observer name="ultimatefollowupemail_config_save_after" instance="Magenest\UltimateFollowupEmail\Observer\Config\Save"/>
+    </event>
+    <event name="sales_order_creditmemo_save_commit_after">
+        <observer name="ultimatefollowupemail_save_creditmemo" instance="Magenest\UltimateFollowupEmail\Observer\Order\OrderRefund" />
+    </event>
+</config>

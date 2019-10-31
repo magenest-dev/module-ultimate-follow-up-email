@@ -1,0 +1,37 @@
+<?php
+/**
+ * Created by Magenest
+ * User: Eric Quach
+ * Date: 17/06/2016
+ * Time: 10:03
+ */
+/** @var  $block \Magenest\UltimateFollowupEmail\Block\Form\Customer\Mobile */
+$is_required_field = $block->isMobileRequired();
+$userAttributeBlock = $block->getLayout()->getBlock('customer_form_user_attributes');
+if ($userAttributeBlock) {
+    return;
+}
+?>
+<fieldset class="fieldset create account"
+    <?php if ($is_required_field) { ?>
+        data-hasrequired="<?php /* @escapeNotVerified */
+        echo __('* Required Fields') ?>"
+    <?php } ?>>
+    <legend class="legend"><span><?php /* @escapeNotVerified */
+            echo __('Additional Information') ?></span></legend>
+    <br>
+    <div class="field my_attribute <?php if ($is_required_field) {
+        ?> required <?php
+    } ?>">
+        <label for="mobile_number" class="label"><span><?php /* @escapeNotVerified */
+                echo __('Mobile') ?></span></label>
+        <div class="control">
+            <input type="text" name="mobile_number" id="mobile_number" title="<?php /* @escapeNotVerified */
+            echo __('Mobile') ?>" class="input-text"
+                <?php if ($is_required_field) { ?>
+                    data-validate="{required:true}" <?php
+                } ?>
+                   autocomplete="off">
+        </div>
+    </div>
+</fieldset>

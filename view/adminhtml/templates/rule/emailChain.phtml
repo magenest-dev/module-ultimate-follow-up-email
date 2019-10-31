@@ -1,0 +1,139 @@
+<?php
+/**
+ * Created by Magenest
+ * User: Eric Quach
+ * Date: 30/09/2015
+ * Time: 10:32
+ */
+/**
+  * @var \Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Emails $block
+*/
+$type = $block->getType();
+$uploadUrl = $block->getData('uploadUrl');
+
+$attached_files = $block->getAttachedFiles();
+
+?>
+
+<?php
+$emailblock = $block->getData('papaClass');
+
+echo $emailblock->getChildHtml('gallery')
+?>
+
+
+<table class="data-grid email-chain" id="email-chain-table" data-role="flex-table">
+
+    <thead>
+    <tr  class="data-grid-filters">
+        <td><b><?php  echo __("Email Template") ?> </b></td>
+        <td><b><?php  echo __("") ?> </b></td>
+        <td><b><?php  echo __("Day") ?></b></td>
+        <td><b><?php  echo __("Hour") ?></b></td>
+        <td><b><?php  echo __("Min") ?></b></td>
+        <td><b><?php  echo __("Action") ?></b></td>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <?php
+    if ($emails = $this->getData('emails')) {
+        foreach ($emails as $index=>$email) {
+            ?>
+
+            <tr data-order="<?php echo $index ?>">
+                <td>
+                    <select name="email[<?php echo $index ?>][template]" data-value="<?php echo $email['template'] ?>"
+                            data-require="required-entry" data-role="followup-email-template"
+                            class="bind-value  required-entry _required select admin__control-select email-template">
+                        <option value> <?php echo __("Select Email Template") ?></option>
+<!--                        <option class="new_email_template" value> --><?php //echo __("Add New Email Template...") ?><!--</option>-->
+<!--                        <option class="edit_email_template" value> --><?php //echo __("Edit Email Template...") ?><!--</option>-->
+                        <option class="email_separator" disabled>--------------------------------------------------</option>
+                        <?php if ($this->getData("options")) {
+                            foreach ($this->getData("options") as $template) {
+                                ?>
+
+                                <option value="<?php echo $template['value']  ?>" > <?php echo $template['label'] ?> </option>
+                            <?php
+
+                            }
+                        } ?>
+
+                    </select>
+                </td>
+
+                <td>
+<!--                    <select name="email[--><?php //echo $index ?><!--][before]" data-require="required-entry" class=" required-entry _required select admin__control-select" >-->
+<!--                        --><?php //if ($type =='customer_birthday') { ?>
+<!--                            <option value="0"> --><?php // echo __("Before") ?><!-- </option>-->
+<!--                        --><?php //} else {  ?>
+<!--                            <option value="1"> --><?php // echo __("After") ?><!--</option>-->
+<!--                        --><?php //} ?>
+<!--                    </select>-->
+                    <?php  echo __("Email Sent After") ?>
+                </td>
+                <td> <input type="number" min="0" name="email[<?php echo $index ?>][day]"  value="<?php echo $email['day'] ?>" data-role="require-anchor" data-sample="email-chain"  /></td>
+                <td> <input type="number" min="0"  name="email[<?php echo $index ?>][hour]" value="<?php echo $email['hour'] ?>" data-role="require-anchor" data-sample="email-chain"  /></td>
+                <td> <input type="number" min="0"   name="email[<?php echo $index ?>][min]" value="<?php echo $email['min'] ?>" data-role="require-anchor" data-sample="email-chain" /></td>
+                <td> <a href="#"  class="delete-email-chain-btn action-default" data-action="delete-row" ><span> <?php  echo __('Delete') ?></span></a></td>
+
+            </tr>
+
+        <?php }
+    }?>
+    <tr data-order="1000" class="sample-template not-render" data-role="row-pattern"'>
+        <td>
+            <select name="email[1000][template]"
+                    class="require-anchor email-template required-entry _required select admin__control-select email-template"
+                    data-sample="email-chain" data-require="required-entry"
+                    data-role="followup-email-template" >
+                <option value> <?php echo __("Select Email Template") ?></option>
+<!--                <option class="new_email_template" value> --><?php //echo __("Add New Email Template...") ?><!--</option>-->
+<!--                <option class="edit_email_template" value> --><?php //echo __("Edit Email Template...") ?><!--</option>-->
+                <option class="email_separator" disabled>--------------------------------------------------</option>
+                <?php if ($this->getData("options")) {
+                    foreach ($this->getData("options") as $template) {
+                        ?>
+
+                        <option value="<?php echo $template['value']  ?>" > <?php echo $template['label'] ?> </option>
+                <?php
+
+                    }
+                } ?>
+            </select>
+        </td>
+        <td>
+<!--            <select name="email[1000][before]" data-role="require-anchor" data-require="required-entry"  data-sample="email-chain">-->
+<!--                --><?php //if ($type =='customer_birthday') { ?>
+<!--                <option value="0"> --><?php // echo __("Before") ?><!-- </option>-->
+<!--                --><?php //} else {  ?>
+<!--                <option value="1"> --><?php // echo __("After") ?><!--</option>-->
+<!--                --><?php //} ?>
+<!--            </select>-->
+            <?php  echo __("Email Sent After") ?>
+        </td>
+        <td> <input type="number" min="0" name="email[1000][day]" data-role="require-anchor" data-sample="email-chain"  /></td>
+        <td> <input type="number" min="0"  name="email[1000][hour]" data-role="require-anchor" data-sample="email-chain"  /></td>
+        <td> <input type="number" min="0"  name="email[1000][min]"  data-role="require-anchor" data-sample="email-chain"  /></td>
+        <td> <button type="button" class="delete-email-chain-btn action-default" data-action="delete-row"><span> <?php  echo __('Delete') ?></span></button></td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr><td> <button type="button" class="add-btn action-default"  data-role="add-new-row"> <?php echo __("Add email in chain") ?></button></td></tr>
+    </tfoot>
+</table>
+
+<div class="not-render" style="display: none">
+    <div class="create-new-marketing-email full-height" data-role="wrapper-modal-new-email" >
+    <iframe id="fue_new_email" width="95%"  height="95%" src="<?php echo $block->getUrl('admin/email_template/new');?>" ></iframe>
+    </div>
+</div>
+
+<div class="not-render" style="display: none">
+    <div class="edit-marketing-email full-height" data-role="wrapper-modal-edit-email" >
+        <iframe id="fue_edit_email" width="95%"  height="95%" src="<?php echo $block->getUrl('admin/email_template');?>" ></iframe>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+
+ Use these variables to echo data to the template.
+ E.g: item.getSku() to get the item's sku.
+-->
+<!--@subject {{trans "Order Placed"}} @-->
+<!--@vars {
+"var order":"Order"
+} @-->
+{{var customerName}}
+<p>{{trans "Products ordered"}}</p>
+<p>
+    {{var orderProductsGrid|raw}}
+</p>

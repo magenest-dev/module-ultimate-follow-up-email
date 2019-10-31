@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 mAGENEST. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ultimatefollowupemail>
+            <general>
+                <email_identity>general</email_identity>
+            </general>
+            <abandoned_cart>
+                <period>60</period>
+            </abandoned_cart>
+            <customer_no_activity>
+                <period>24</period>
+            </customer_no_activity>
+            <email>
+                <fue_product>fue_product</fue_product>
+                <fue_related_products>fue_related_products</fue_related_products>
+                <fue_order_items>fue_order_items</fue_order_items>
+                <fue_order_item>fue_order_item</fue_order_item>
+                <fue_abc>fue_abc</fue_abc>
+                <fue_abc_item>fue_abc_item</fue_abc_item>
+                <fue_wishlist_on_sale_product>fue_wishlist_on_sale_product</fue_wishlist_on_sale_product>
+            </email>
+        </ultimatefollowupemail>
+    </default>
+</config>

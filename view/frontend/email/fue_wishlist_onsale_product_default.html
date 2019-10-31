@@ -1,0 +1,23 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+-->
+<!--@subject {{trans "Wishlist On Sale Product "}} @-->
+{{template config_path="design/email/header_template"}}
+
+<h3>{{trans "Products on sale "}}</h3>
+<!--{{var wishlistOnSaleProduct|raw}}-->
+<br>
+<br>
+<h3>{{trans " Wishlist of customer  "}}</h3>
+{{var customerName}}
+
+{{template config_path="design/email/footer_template"}}

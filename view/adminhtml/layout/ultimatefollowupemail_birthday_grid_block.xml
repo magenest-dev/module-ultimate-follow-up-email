@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="admin.block.birthday.grid.container">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Birthday\Grid" name="admin.block.birthday.grid" as="grid">
+
+            </block>
+        </referenceBlock>
+    </body>
+</page>

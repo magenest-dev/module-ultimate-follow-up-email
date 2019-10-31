@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="form.additional.info">
+            <block ifconfig="ultimatefollowupemail/mobile/enable" class="Magenest\UltimateFollowupEmail\Block\Form\Customer\Mobile" name="mobile_additional_info_customer" template="Magenest_UltimateFollowupEmail::form/register.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

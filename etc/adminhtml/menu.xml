@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <!-- BEGIN SETTING SECTION -->
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail"
+             title="Follow Up Emails And SMS"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="60"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"
+             title="Setting"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="5"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_rule"
+             title="Trigger Rules"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="20"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"
+             action="ultimatefollowupemail/rule/index"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_rule"/>
+        <add id="Magenest_UltimateFollowupEmail::config_ultimatefollowupemail_menu"
+             title="Configuration"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="40"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"
+             action="adminhtml/system_config/edit/section/ultimatefollowupemail/"
+             resource="Magenest_UltimateFollowupEmail::config_ultimatefollowupemail_menu"/>
+        <add id="Magenest_UltimateFollowupEmail::email_template"
+             title="Email Templates"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="50"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"
+             action="adminhtml/email_template/"
+             resource="Magenest_UltimateFollowupEmail::email_template"/>
+        <!--<add id="Magenest_UltimateFollowupEmail::setup_coupon"-->
+             <!--title="Coupons"-->
+             <!--module="Magenest_UltimateFollowupEmail"-->
+             <!--sortOrder="60"-->
+             <!--parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_setting"-->
+             <!--action="sales_rule/promo_quote/"-->
+             <!--resource="Magenest_UltimateFollowupEmail::setup_coupon"/>-->
+        <!-- END SETTING SECTION-->
+
+        <!-- BEGIN RECORDS SECTION -->
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"
+             title="Records"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="10"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_mail"
+             title="Mail Logs"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="10"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"
+             action="ultimatefollowupemail/mail/index"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_mail"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_sms"
+             title="Sms Logs"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="11"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"
+             action="ultimatefollowupemail/sms/index"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_sms"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_cart"
+             title="Abandoned Carts"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="30"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"
+             action="ultimatefollowupemail/cart/index"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_cart"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_birthday"
+             title="Customer Birthdays"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="40"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"
+             action="ultimatefollowupemail/birthday/index"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_birthday"/>
+<!--        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_unsubscriber"-->
+<!--             title="Unsubscribers"-->
+<!--             module="Magenest_UltimateFollowupEmail"-->
+<!--             sortOrder="50"-->
+<!--             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_records"-->
+<!--             action="ultimatefollowupemail/unsubscriber/index"-->
+<!--             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_unsubscriber"/>-->
+        <!-- END RECORDS SECTION -->
+
+        <!-- BEGIN REPORTS SECTION -->
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_reports"
+             title="Reports"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="15"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_reports"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_charts"
+             title="Abandoned Cart Charts"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="10"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_reports"
+             action="ultimatefollowupemail/chart/abandonedcart"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_charts"/>
+        <add id="Magenest_UltimateFollowupEmail::ultimatefollowupemail_campaign_charts"
+             title="Email Campaign Charts"
+             module="Magenest_UltimateFollowupEmail"
+             sortOrder="20"
+             parent="Magenest_UltimateFollowupEmail::ultimatefollowupemail_reports"
+             action="ultimatefollowupemail/chart/emailcampaign"
+             resource="Magenest_UltimateFollowupEmail::ultimatefollowupemail_campaign_charts"/>
+        <!-- END RECORDS SECTION -->
+    </menu>
+</config>

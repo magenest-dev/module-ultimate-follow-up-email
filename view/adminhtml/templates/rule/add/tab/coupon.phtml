@@ -1,0 +1,56 @@
+<?php
+/** @var $this Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add\Tab\Coupon */
+?>
+<div class="followup-email-coupon-selector-wrapper>">
+    <fieldset id="rule_conditions_fieldset" class="fieldset">
+        <legend class="legend"><span><?php echo __('Select promotion rule to insert coupon') ?>.</span></legend>
+        <div class="rule-coupon-wrapper">
+            <div class="admin__field-control control">
+                <label for="enable_coupon">
+                    <?php echo __('Enable coupon') ?>
+                </label>
+                <select id="enable_coupon" name="enable_coupon">
+                    <option value="0" <?php echo $this->getIsSelect(0) ?> > <?php echo __('No') ?></option>
+                    <option value="1" <?php echo $this->getIsSelect(1) ?> > <?php echo __('Yes') ?></option>
+                </select>
+            </div>
+            <div class="admin__field-control control" style="margin-top: 20px">
+                <label for="promotion_rule_id">
+                    <?php echo __('Select a promotion rule') ?>
+                </label>
+                <select id="promotion_rule_id" name="promotion_rule_id">
+                    <option>No Promotion Rule Selected</option>
+                    <?php foreach ($this->getAvailableCouponRules() as $rule) : ?>
+                        <option value="<?= $rule->getId() ?>" <?= $rule->getId() == $this->getPromotionId() ? 'selected' : '' ?>><?= $rule->getName() ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <br/>
+                <i>The Promotion Rule must meet the requirements (If you can't see your promotion rule, please re-configure the promotion rule as below):</i>
+                <ul style="margin-left:45px;">
+                    <li><i>Is Active</i></li>
+                    <li><i>Coupon: Specific Coupon</i></li>
+                    <li><i>Coupon: Use Auto Generation</i></li>
+                </ul>
+            </div>
+            <div class="admin__field-control control" style="margin-top: 20px">
+                <label for="promotion_rule">
+                    <?php echo __('Coupon Available For: ') ?>
+                </label>
+                <span class="note">( <?php echo __('Coupons are generated when followup emails are generated. After this amount of time, coupons are expired') ?> )</span>
+                <table class="data-grid email-chain" id="coupon-period-table" data-role="flex-table">
+                    <tbody>
+                    <tr class="data-grid-filters">
+                        <td><input type="number" name="coupon[day]" value="<?php echo $this->getCouponTime('day') ?>"/></td>
+                        <td><b><?php echo __("Day(s)") ?></b></td>
+                        <td><input type="number" name="coupon[hour]" value="<?php echo $this->getCouponTime('hour') ?>"/></td>
+                        <td><b><?php echo __("Hour(s)") ?></b></td>
+                        <td><input type="number" name="coupon[min]"  value="<?php echo $this->getCouponTime('minute') ?>"/></td>
+                        <td><b><?php echo __("Min(s)") ?></b></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+        </div>
+    </fieldset>
+</div>

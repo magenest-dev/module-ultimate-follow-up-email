@@ -1,0 +1,33 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+-->
+<!--@subject {{trans "Wishlist On Sale Product"}} @-->
+<table class="fue-wishlist-on-sale-product">
+    <tr>
+        <td class="product-image-container">
+            <a href="{{var product.getProductUrl()}}" target="_blank">
+                <img src="{{var product_image_url}}" height="150" width="120">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="product-name-container">
+            <span class="product-name">{{var product.getName()}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="product-price-container">
+            <p style="font-weight: bold">{{var product_price}}</p>
+            <p style="font-weight: bold">Old Price: {{var old_product_price}}</p>
+        </td>
+    </tr>
+</table>

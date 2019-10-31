@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+
+<!--    <event name="customer_register_success">-->
+<!--        <observer name="ultimatefollowupemail_customer_register" instance="Magenest\UltimateFollowupEmail\Observer\Customer\Register" />-->
+<!--    </event>-->
+
+    <event name="customer_save_after">
+        <observer name="ultimatefollowupemail_customer_register" instance="Magenest\UltimateFollowupEmail\Observer\Customer\Register" />
+    </event>
+
+    <event name="sales_order_item_save_commit_after">
+        <observer name="ultimatefollowupemail_wishlist_item_check" instance="Magenest\UltimateFollowupEmail\Observer\Wishlist\ItemCheck"  />
+    </event>
+
+    <event name="wishlist_share">
+        <observer name="ultimatefollowupemail_wishlist_share" instance="Magenest\UltimateFollowupEmail\Observer\Wishlist\Shared"  />
+    </event>
+
+    <event name="newsletter_subscriber_save_commit_after">
+        <observer name="ultimatefollowupemail_newsletter" instance="Magenest\UltimateFollowupEmail\Observer\Newsletter\Subscribe" />
+    </event>
+
+    <!-- downloadable_linkFor notification of new version of sofware in downloadable product downloadable_link-->
+    <event name="core_abstract_save_before">
+        <observer name="ultimatefollowupemail_downloadable_before" instance="Magenest\UltimateFollowupEmail\Observer\Downloadable\Link" />
+    </event>
+    <event name="checkout_submit_all_after">
+        <observer name="ultimatefollowupemail_converted_cart" instance="Magenest\UltimateFollowupEmail\Observer\Order\AbandonedCartConverted" />
+        <observer name="ultimatefollowupemail_order_change" instance="Magenest\UltimateFollowupEmail\Observer\Order\Place"  />
+    </event>
+    <event name="sales_order_save_commit_after">
+        <observer name="ultimatefollowupemail_order_change" instance="Magenest\UltimateFollowupEmail\Observer\Order\StatusChange"  />
+        <observer name="ultimatefollowupemail_order_saved" instance="Magenest\UltimateFollowupEmail\Observer\Order\OrderProductReview" />
+<!--        <observer name="ultimatefollowupemail_rebuy_abandoned_cart" instance="Magenest\UltimateFollowupEmail\Observer\Order\RebuyAbandonedCart" />-->
+    </event>
+    <event name="sales_order_creditmemo_save_after">
+        <observer name="ultimatefollowupemail_credit_memo_change" instance="Magenest\UltimateFollowupEmail\Observer\Creditmemo\ChangeStatus"/>
+    </event>
+
+</config>

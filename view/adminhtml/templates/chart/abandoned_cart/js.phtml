@@ -1,0 +1,141 @@
+<?php
+/** @var $block \Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\AbandonedCart */
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    getAbandonedCartChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Type');
+            data.addColumn('number', 'Value');
+            data.addRows([
+                <?php foreach($block->getAbandonedCartData() as $key => $value): ?>
+                ['<?php echo $key ?>', <?php echo $value ?>],
+                <?php endforeach; ?>
+            ]);
+            var options = {
+                'legend': {position: 'bottom', textStyle: {color: 'black', fontSize: 14}},
+                'title': 'Cart Rates',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                'width': 500,
+                'height': 400,
+                tooltip: {textStyle: {color: '#FF0000'}, showColorCode: true},
+                slices: {
+                    0: {color: '#2E3192'},
+                    1: {color: '#ED1C24'}
+                }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('abandoned_cart_chart'));
+            chart.draw(data, options);
+        }
+    };
+    getGuestAbandonedCartChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Type');
+            data.addColumn('number', 'Value');
+            data.addRows([
+                <?php foreach($block->getGuestAbandonedCartData() as $key => $value): ?>
+                ['<?php echo $key ?>', <?php echo $value ?>],
+                <?php endforeach; ?>
+            ]);
+            var options = {
+                'legend': {
+                    position: 'bottom',
+                    textStyle: {color: 'black', fontSize: 14}
+                },
+                'title': 'Abandoned Cart Rates',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                'width': 500,
+                'height': 400,
+                tooltip: {
+                    textStyle: {color: '#FF0000'},
+                    showColorCode: true
+                },
+                slices: {
+                    0: {color: '#2E3192'},
+                    1: {color: '#ED1C24'}
+                }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('guest_abandoned_cart_chart'));
+            chart.draw(data, options);
+        }
+    };
+    getRepurchasedCartChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Type');
+            data.addColumn('number', 'Value');
+            data.addRows([
+                <?php foreach($block->getRepurchasedCartData() as $key => $value): ?>
+                ['<?php echo $key ?>', <?php echo $value ?>],
+                <?php endforeach; ?>
+            ]);
+            var options = {
+                'legend': {position: 'bottom', textStyle: {color: 'black', fontSize: 14}},
+                'title': 'Repurchased Abandoned Cart Rates',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                'width': 500,
+                'height': 400,
+                tooltip: {textStyle: {color: '#FF0000'}, showColorCode: true},
+                slices: {
+                    0: {color: '#2E3192'},
+                    1: {color: '#ED1C24'}
+                }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('repurchased_cart_chart'));
+            chart.draw(data, options);
+        }
+    };
+    getAbandonedCartLineChart = function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Date', 'Abandoned Carts'],
+                <?php foreach ($block->getAbandonedCartLineData() as $line): ?>
+                ['<?php echo $line['created_at'] ?>',  <?php echo $line['count'] ?>],
+                <?php endforeach; ?>
+            ]);
+
+            var options = {
+                title: 'Abandoned Carts',
+                titleTextStyle: {
+                    fontSize: 15,
+                    bold: false
+                },
+                curveType: 'none',
+                animation: {
+                    startup: true,
+                    duration: 2000,
+                    easing: 'in'
+                },
+                'legend': {
+                    position: 'bottom',
+                    textStyle: {color: 'black', fontSize: 14}
+                },
+                colors: ['#ED1C24']
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('abandoned_cart_line_chart'));
+
+            chart.draw(data, options);
+        }
+    }
+</script>

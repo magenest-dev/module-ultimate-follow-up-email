@@ -1,0 +1,899 @@
+.not-render {
+    display: none;
+}
+
+.full-height {
+    height: 100%
+}
+
+.large-modal-content {
+    width:95%  ;
+    height:95%;
+}
+
+.modal-followup-email-slide .modal-content {
+    height: 90%;
+}
+.email-chain input[type="text"] {
+    width: 70px;
+}
+.data-grid.email-chain {
+    border-top: 1px solid #d6d6d6;
+}
+
+@charset 'UTF-8';
+/*
+ * jQuery File Upload UI Plugin CSS 6.3
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-right: 4px;
+}
+.fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    border: solid transparent;
+    border-width: 0 0 100px 200px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+    cursor: pointer;
+}
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+    margin-bottom: 5px;
+}
+.files .progress {
+    width: 200px;
+}
+.progress-animated .bar {
+    background: url(../img/progressbar.gif) !important;
+    filter: none;
+}
+.fileupload-loading {
+    position: absolute;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    background: url(../img/loading.gif) center no-repeat;
+    display: none;
+}
+.fileupload-processing .fileupload-loading {
+    display: block;
+}
+
+/* Fix for IE 6: */
+*html .fileinput-button {
+    line-height: 22px;
+    margin: 1px -3px 0 0;
+}
+
+/* Fix for IE 7: */
+*+html .fileinput-button {
+    margin: 1px 0 0 0;
+}
+
+@media (max-width: 480px) {
+    .files .btn span {
+        display: none;
+    }
+    .files .preview * {
+        width: 40px;
+    }
+    .files .name * {
+        width: 80px;
+        display: inline-block;
+        word-wrap: break-word;
+    }
+    .files .progress {
+        width: 20px;
+    }
+    .files .delete {
+        width: 60px;
+    }
+}
+/* for attach files*/
+/**
+ * Copyright Â© 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+.admin__scope-old .product-actions {
+    padding: 5px 18px;
+}
+.admin__scope-old .product-actions .switcher {
+    display: inline-block;
+    vertical-align: top;
+    margin: 3px 0 6px 6px;
+}
+
+/* Image Management */
+.admin__scope-old .images {
+    position: relative;
+    border: 2px dotted #ccc;
+    margin-bottom: 2px;
+    padding: 5px 0 0;
+}
+
+.admin__scope-old .images .image {
+    margin-bottom: 5px;
+}
+
+.admin__scope-old .image .spacer {
+    width: 100%;
+}
+
+.admin__scope-old .image.image-placeholder .fileinput-button {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.admin__scope-old .image.image-placeholder .fileinput-button > span {
+    display: none;
+}
+
+.admin__scope-old .image .product-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 1;
+}
+
+.admin__scope-old .base-image .image-label {
+    background: url(../../Magento_Backend/images/gallery-image-base-label.png) no-repeat;
+    bottom: 0;
+    height: 33px;
+    right: 0;
+    visibility: visible;
+    width: 33px;
+}
+
+.admin__scope-old .image.base-image .image-label:before {
+    display: none;
+}
+
+.admin__scope-old .image.base-image:hover .image-label:before {
+    display: block;
+}
+
+.admin__scope-old .image.active {
+    box-shadow: 0 0 10px #2ea9ec;
+}
+
+.admin__scope-old .image .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.admin__scope-old .image .actions [class^="action-"] {
+    z-index: 10;
+}
+
+.admin__scope-old .image .actions [class^="action-"],
+.admin__scope-old .image .image-label,
+.admin__scope-old .image[data-image-hidden] .actions [class^="action-"],
+.admin__scope-old .image.hidden-for-front .actions [class^="action-"] {
+    visibility: hidden;
+}
+
+.admin__scope-old .image:hover .actions [class^="action-"],
+.admin__scope-old .image:hover .image-label,
+.admin__scope-old .image.base-image .image-label,
+.admin__scope-old .image[data-image-hidden]:hover .actions .action-delete,
+.admin__scope-old .hidden-for-front:hover .actions [class^="action-"] {
+    visibility: visible;
+}
+
+.admin__scope-old .image .action-delete {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    z-index: 10;
+}
+
+.admin__scope-old .image .action-delete:before {
+    font-family: "Admin Icons";
+    content: "\e630";
+    font-size: 1.8rem;
+    line-height: inherit;
+    color: #9e9e9e;
+    overflow: hidden;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.admin__scope-old .image .action-make-base {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+    padding: 5px;
+    margin: auto;
+}
+
+.admin__scope-old .image.base-image .action-make-base {
+    display: none;
+}
+
+.admin__scope-old .image .draggable-handle {
+    background: none;
+    cursor: move;
+    height: 20px;
+    line-height: inherit;
+    width: 20px;
+}
+
+.admin__scope-old .gallery .image .action-make-base {
+    width: 70%;
+}
+
+/* Gallery image panel */
+.admin__scope-old .image-panel {
+    position: relative;
+    top: 5px;
+    clear: both;
+    background: #fff;
+    padding: 20px 15px;
+}
+
+.admin__scope-old .image .file-row {
+    background: #fff url(../images/ajax-loader-big.gif) no-repeat 50% 50%;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -999em;
+    top: 0;
+    width: auto;
+    z-index: 5;
+}
+
+.admin__scope-old .image-pointer {
+    position: absolute;
+    left: 50%;
+    top: -11px;
+    margin-left: -14px;
+    width: 28px;
+    height: 15px;
+    background: url(../../Magento_Backend/images/gallery-image-panel-corner.png) no-repeat;
+}
+
+.admin__scope-old .image-panel-controls .fieldset-image-panel .field {
+    margin-bottom: 10px;
+}
+
+.admin__scope-old .image-panel-controls .fieldset-image-panel .label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
+.admin__scope-old .image-panel-controls .fieldset-image-panel .field > .control,
+.admin__scope-old .image-panel-controls textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.admin__scope-old .image-panel-preview img {
+    width: 100%;
+}
+
+/* action in fieldset wrapper */
+.admin__scope-old .admin__collapsible-block-wrapper .attribute-selector {
+    height: 0;
+    visibility: hidden;
+}
+
+.admin__scope-old .admin__collapsible-block-wrapper.opened .attribute-selector {
+    height: auto;
+    visibility: visible;
+}
+
+.admin__scope-old .action-manage-images {
+    font: 11px/1.666 Arial, Verdana, sans-serif;
+    color: #a29c94;
+    text-decoration: underline;
+}
+
+/* Quantity filed on product */
+.admin__scope-old .field-quantity_and_stock_status input[type="text"],
+.admin__scope-old .field-weight .control .field:first-child {
+    width: 140px;
+    margin-right: 15px;
+}
+/*
+.admin__scope-old .field-quantity_and_stock_status select {
+    vertical-align: middle;
+}
+*/
+/* Weight field */
+.admin__scope-old .field-weight .control {
+    display: table;
+    width: 100%;
+}
+
+.admin__scope-old .field-weight .control .field:first-child .control {
+    width: 100%;
+}
+
+.admin__scope-old .field-weight .choice {
+    padding-top: 3px;
+}
+
+.admin__scope-old .field-price .addon > input {
+    width: 99px;
+    float: left;
+}
+
+.admin__scope-old .image-panel .fieldset > .field > .label {
+    line-height: inherit;
+}
+
+.admin__scope-old .image-panel .fieldset > .field > .label span {
+    font-weight: 400;
+}
+
+.admin__scope-old .image-panel-controls .fieldset-image-panel {
+    padding: 2rem 0.5rem 0 0;
+}
+
+/* Validation for Product Fields with addons  */
+.admin__scope-old .field-price .control,
+.admin__scope-old .field-special_price .control,
+.admin__scope-old .field-msrp .control,
+.admin__scope-old .field-weight .control,
+.admin__scope-old .field-quantity_and_stock_status .control {
+    position: relative;
+}
+
+.admin__scope-old .field-price label.mage-error,
+.admin__scope-old .field-special_price label.mage-error,
+.admin__scope-old .field-msrp label.mage-error,
+.admin__scope-old .field-weight label.mage-error,
+.admin__scope-old .field-quantity_and_stock_status label.mage-error {
+    position: static;
+}
+
+/*
+    Custom Options
+-------------------------------------- */
+.admin__scope-old #product_options_container_top .field-option-title {
+    width: 500px;
+}
+
+.admin__scope-old #product_options_container_top .field-option-input-type {
+    width: 170px;
+}
+
+.admin__scope-old #product_options_container_top .col-draggable .draggable-handle {
+    top: 7px;
+}
+
+.admin__scope-old #product_options_container_top .col-name,
+.admin__scope-old #product_options_container_top .col-sku {
+    width: 38%;
+}
+
+.admin__scope-old #product_options_container_top .add-select-row ~ label.mage-error {
+    display: block;
+    margin: 5px 0 0;
+}
+
+/*
+    Tier Price Table
+-------------------------------------- */
+
+.admin__scope-old .tiers_table td {
+    vertical-align: top;
+}
+
+.admin__scope-old .tiers_table .col-qty {
+    text-align: left;
+    width: 150px;
+}
+
+.admin__scope-old .tiers_table .col-qty > input[type="text"] {
+    width: 60px;
+    margin-right: 5px;
+}
+
+.admin__scope-old .tiers_table .col-qty span {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.admin__scope-old .tiers_table .col-price .input-text {
+    width: 90px;
+}
+
+.admin__scope-old .new-variation-set {
+    margin-left: 2.127659574%;
+}
+
+.admin__scope-old .not-applicable-attribute {
+    display: none;
+}
+
+.admin__scope-old .attribute-selector {
+    margin: -3px -4px 0 0;
+}
+
+.admin__scope-old .attribute-selector .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.admin__scope-old .attribute-selector .action-choose {
+    margin: 0;
+}
+
+.admin__scope-old .attribute-selector .mage-suggest-dropdown > ul {
+    position: relative;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.admin__scope-old .attribute-selector .dropdown-menu .actions {
+    padding: 14px 12px;
+}
+
+.gallery {
+    background: #f8f8f8;
+    padding: 1rem 0.3rem 0;
+}
+.gallery .image {
+    margin-bottom: 1rem;
+}
+.image {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 151px;
+    margin: 0 .8rem;
+    overflow: hidden;
+    position: relative;
+}
+.image .product-image {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.image.image-placeholder {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+.image.image-placeholder > span {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.image.image-placeholder:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 4rem;
+    line-height: inherit;
+    color: #cccccc;
+    content: '\e63c';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.image.image-placeholder:before {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    z-index: 1;
+}
+.image.image-placeholder .image-browse {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.image.image-placeholder .image-browse > span {
+    display: none;
+}
+.image.image-placeholder input[type="file"] {
+    border: 500px solid transparent;
+    bottom: 0;
+    cursor: pointer;
+    font-size: 10em;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+.image.image-placeholder .spinner {
+    display: none;
+}
+.image.image-placeholder.loading .spinner,
+.image.image-placeholder .file-row .spinner {
+    background: #ffffff;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+.image.image-placeholder.loading .spinner > span,
+.image.image-placeholder .file-row .spinner > span {
+    left: 50%;
+    top: 50%;
+    margin: 0 0 0 -2rem;
+}
+.image.image-placeholder .file-row {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.image .image-placeholder-text {
+    font-size: 1.1rem;
+    bottom: 0;
+    color: #008bdb;
+    left: 0;
+    line-height: 1.333;
+    margin-bottom: 15%;
+    padding: 0 1rem;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+.image.ui-sortable-placeholder {
+    background: #e0f6fe;
+    border: 1px solid #008bdb;
+    visibility: visible !important;
+}
+.image .action-remove {
+    bottom: 6px;
+    cursor: pointer;
+    height: 20px;
+    left: 6px;
+    position: absolute;
+    width: 20px;
+    z-index: 3;
+    display: none;
+    text-decoration: none;
+}
+.image .action-remove > span {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.image .action-remove:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8rem;
+    line-height: inherit;
+    color: #9e9e9e;
+    content: '\e630';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.image .action-remove:hover:before {
+    color: #858585;
+}
+.image .image-label {
+    bottom: 6px;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 3px;
+    width: 20px;
+    z-index: 3;
+    display: none;
+    text-decoration: none;
+}
+.image .image-label > span {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.image .image-label:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8rem;
+    line-height: inherit;
+    color: #9e9e9e;
+    content: '\e63b';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.image .image-label:hover:before {
+    color: #858585;
+}
+.image:hover .action-remove,
+.image:hover .image-label {
+    display: block;
+}
+.image.base-image .image-label {
+    background: url(../Magento_Backend/images/gallery-image-base-label.png) no-repeat;
+    bottom: 0;
+    display: block;
+    height: 33px;
+    right: 0;
+    width: 33px;
+}
+.image.base-image .image-label:before {
+    display: none;
+}
+.image.base-image:hover .image-label {
+    background: none;
+    bottom: 6px;
+    height: 20px;
+    right: 3px;
+    width: 20px;
+}
+.image.base-image:hover .image-label:before {
+    display: block;
+}
+.image .draggable-handle {
+    cursor: move;
+    height: 20px;
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    z-index: 3;
+    display: inline-block;
+    text-decoration: none;
+}
+.image .draggable-handle:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8rem;
+    line-height: inherit;
+    color: #9e9e9e;
+    content: '\e617';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.image .draggable-handle:hover:before {
+    color: #858585;
+}
+.image .image-fade {
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    color: #9e9e9e;
+    content: attr(data-image-hidden-label);
+    font-weight: 600;
+    left: 0;
+    line-height: 125px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+.image.hidden-for-front .image-fade {
+    visibility: visible;
+}
+.image-panel {
+    background: #ffffff;
+    border-bottom: 1px solid #c2c2c2;
+    box-shadow: inset 0 1px 3px #cccccc;
+    clear: both;
+    display: none;
+    margin: 0 -18px 15px;
+    padding: 2rem 15px;
+    position: relative;
+    top: 5px;
+}
+.image-panel-controls,
+.image-panel-preview {
+    float: left;
+    margin-left: 2.127659574%;
+    width: 65.95744680199999%;
+}
+.image-panel-preview {
+    margin-left: 0;
+}
+.image-panel-controls {
+    padding: 0 1%;
+    width: 29.914893614%;
+}
+.image-panel-controls .image-name {
+    color: #666666;
+    display: block;
+    font-size: 1.6rem;
+}
+.image-panel-controls .action-remove {
+    margin: 0 0 35px;
+    display: inline-block;
+    text-decoration: none;
+}
+.image-panel-controls .action-remove > span {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.image-panel-controls .action-remove:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8rem;
+    line-height: inherit;
+    color: #9e9e9e;
+    content: '\e630';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.image-panel-controls .action-remove:hover:before {
+    color: #858585;
+}
+.image-panel-controls .fieldset-image-panel {
+    padding: 2rem 0.5rem 0 0;
+}
+.image-panel-controls .fieldset-image-panel .field {
+    margin-bottom: 1rem;
+}
+.image-panel-controls .fieldset-image-panel .label {
+    margin-bottom: 1rem;
+    padding-top: 0;
+    text-align: left;
+    width: 100%;
+}
+.image-panel-controls .fieldset-image-panel .field > .control,
+.image-panel-controls .image-panel-controls textarea {
+    resize: vertical;
+    width: 100%;
+}
+.image-file-params {
+    color: #666666;
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+}
+.image-panel-preview img {
+    width: 100%;
+}
+.gallery .multiselect-alt {
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.gallery .multiselect-alt .item {
+    border-top: 1px solid #ffffff;
+    cursor: pointer;
+    position: relative;
+}
+.gallery .multiselect-alt .item:first-child {
+    border-top: 0;
+}
+.gallery .multiselect-alt .item.selected {
+    background: #e0f6fe;
+}
+.gallery .multiselect-alt .item.selected:hover {
+    background: #afe8fc;
+}
+.gallery .multiselect-alt .item.selected label {
+    display: inline-block;
+    text-decoration: none;
+}
+.gallery .multiselect-alt .item.selected label:before {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.4rem;
+    line-height: inherit;
+    color: #008bdb;
+    content: '\e62d';
+    font-family: 'Admin Icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+.gallery .multiselect-alt .item.selected label:before {
+    left: 8px;
+    position: absolute;
+    top: 6px;
+    width: 17px;
+}
+.gallery .multiselect-alt label {
+    display: block;
+    cursor: pointer;
+    padding: 6px 2.5rem 0.5rem;
+}
+.gallery .multiselect-alt input[type="checkbox"] {
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 0;
+}

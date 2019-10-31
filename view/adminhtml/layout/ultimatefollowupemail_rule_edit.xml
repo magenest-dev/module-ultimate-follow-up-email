@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_UltimateFollowupEmail::css/style.css"/>
+        <css src="Magenest_UltimateFollowupEmail::css/autocomplete.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Rule\Add" name="ultimatefollowupemail_rule_new"/>
+        </referenceContainer>
+        <referenceContainer name="js">
+            <block class="Magento\Backend\Block\Template" template="Magenest_UltimateFollowupEmail::rule/js.phtml" name="ultimatefollowupemail_rule_add_jsinit"/>
+        </referenceContainer>
+    </body>
+</page>

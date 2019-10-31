@@ -1,0 +1,25 @@
+<!--
+/**
+ * Copyright © 2018 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_Follow Up Email extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package Magenest_Follow Up Email
+ */
+
+ Use these variables to echo data to the template.
+ E.g: item.getSku() to get the item's sku.
+-->
+<!--@subject {{trans "Order Items"}} @-->
+<!--@vars {
+"var order":"Order"
+} @-->
+<ul class="order-items-container" style='list-style: none; margin:0; padding: 0;'>
+    <li class="order-items-list" style=" float: left;margin: 0; display: inline;">
+        {{var order_items}}
+    </li>
+    <li style="list-style:none; clear: both;"></li>
+</ul>

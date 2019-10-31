@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">unsubscriber_listing.unsubscriber_listing_data_source</item>
+            <item name="deps" xsi:type="string">unsubscriber_listing.unsubscriber_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">unsubscriber_columns</item>
+    </argument>
+    <dataSource name="unsubscriber_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">unsubscriber_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">unsubscriber_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+            </item>
+        </argument>
+        <!--<columnsControls name="columns_controls"/>-->
+        <bookmark name="bookmarks"/>
+        <component name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters" />
+        <paging name="listing_paging"/>
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="subscribe">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">status</item>
+                        <item name="label" xsi:type="string" translate="true">Re-subscribe/Un-subscribe</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="array">
+                    <item name="0" xsi:type="array">
+                        <item name="type" xsi:type="string">resubscribe</item>
+                        <item name="label" xsi:type="string" translate="true">Re-subscribe</item>
+                        <item name="url" xsi:type="url" path="ultimatefollowupemail/unsubscriber/massstatus">
+                            <param name="status">1</param>
+                        </item>
+                    </item>
+                    <item name="1" xsi:type="array">
+                        <item name="type" xsi:type="string">unsubscribe</item>
+                        <item name="label" xsi:type="string" translate="true">Un-subscribe</item>
+                        <item name="url" xsi:type="url" path="ultimatefollowupemail/unsubscriber/massstatus">
+                            <param name="status">0</param>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </container>
+    <columns name="unsubscriber_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">unsubscriber_id</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="unsubscriber_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">desc</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="draggable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="unsubscriber_email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">email</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Email</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="draggable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="unsubscriber_status" class="Magenest\UltimateFollowupEmail\Ui\Component\Listing\Columns\Status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magenest\UltimateFollowupEmail\Model\Config\Source\UnsubscriberStatus</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="draggable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="rule_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="label" xsi:type="string" translate="true">Trigger Rule ID</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="draggable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="rule_name" class="Magenest\UltimateFollowupEmail\Ui\Component\Listing\Columns\RuleName">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Trigger Rule Name</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="draggable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

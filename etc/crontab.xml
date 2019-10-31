@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Cron/etc/crontab.xsd">
+    <group id="magenest_fue">
+        <job name="followup_email_collect_ac_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="collectAbandonedCarts">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="followup_email_collect_bd_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="collectBirthDayMails">
+            <schedule>0 */6 * * *</schedule>
+        </job>
+        <job name="followup_email_collect_wishlist_reminder_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="collectWishlistReminderMails">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="followup_email_collect_customer_no_activity_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="collectCustomerNoActivityMails">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="followup_email_collect_wishlist_on_sale_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="collectWishlistOnSaleMails">
+            <schedule>*/5 * * * *</schedule>
+        </job>
+        <!--<job name="followup_email_for_updated_item" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="updateItem">-->
+            <!--<schedule>* * * * *</schedule>-->
+        <!--</job>-->
+        <job name="followup_email_send_mail" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="sendScheduledMail">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="followup_email_send_sms" instance="Magenest\UltimateFollowupEmail\Model\Cron" method="scheduleSendSMS">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\EmailCampaign" name="period_filter" template="chart/period_filter.phtml"/>
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\EmailCampaign" name="charts" template="chart/email_campaign/email_campaign.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="js">
+            <block class="Magenest\UltimateFollowupEmail\Block\Adminhtml\Chart\EmailCampaign" name="charts_js" template="Magenest_UltimateFollowupEmail::chart/email_campaign/js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

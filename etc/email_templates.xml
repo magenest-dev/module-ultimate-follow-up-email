@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="fue_product"
+              label="Follow Up Email - Single Product Template"
+              file="fue_product.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_abc"
+              label="Follow Up Email - Abandoned Cart"
+              file="fue_abc.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_abc_item"
+              label="Follow Up Email - Abandoned Cart Item"
+              file="fue_abc_item.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_order_items"
+              label="Follow Up Email - Order Items"
+              file="fue_order_items.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_order_item"
+              label="Follow Up Email - Order Item"
+              file="fue_order_item.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_related_products"
+              label="Follow Up Email - Related Products"
+              file="fue_related_products.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+    <template id="fue_wishlist_on_sale_product"
+              label="Follow Up Email - Wishlist On Sale Product"
+              file="fue_wishlist_on_sale_product.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_wishlist_on_sale_product_default"
+              label="Follow Up Email - Wishlist On Sale Product Default"
+              file="fue_wishlist_onsale_product_default.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+
+    <template id="fue_register_customer"
+              label="Follow Up Email - Register Customer"
+              file="fue_register_customer.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_birthday_customer"
+              label="Follow Up Email - Birthday Customer"
+              file="fue_birthday_customer.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_subscriber_customer"
+              label="Follow Up Email - Subsciber Customer"
+              file="fue_subscriber_customer.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_unsubcriber_customer"
+              label="Follow Up Email - Unsubcriber Customer"
+              file="fue_unsubscriber_customer.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_wishlist_item_reminder"
+              label="Follow Up Email - WishList Item Reminder"
+              file="fue_wishlist_item_reminder.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_wishlist_back_in_stock"
+              label="Follow Up Email - WishList Back In Stock"
+              file="fue_wishlist_back_in_stock.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_abandoned_cart_default"
+              label="Follow Up Email - Abandoned Cart Default "
+              file="fue_wishlist_onsale_product_default.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_abandoned_cart_default"
+              label="Follow Up Email - Abandoned Cart Default "
+              file="fue_abc_default.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_order_placed"
+              label="Follow Up Email - Order Placed "
+              file="fue_order_placed.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+    <template id="fue_order_change_status"
+              label="Follow Up Email - Order Change Status "
+              file="fue_change_status.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+<!--    <template id="fue_order_updated_item"-->
+<!--              label="Follow Up Email - Send Updated Item "-->
+<!--              file="fue_order_updated_item.html"-->
+<!--              type="html"-->
+<!--              module="Magenest_UltimateFollowupEmail"-->
+<!--              area="frontend"/>-->
+
+    <template id="fue_order_product_review"
+              label="Follow Up Email - Ask Customer Product Review "
+              file="fue_order_product_review.html"
+              type="html"
+              module="Magenest_UltimateFollowupEmail"
+              area="frontend"/>
+
+
+</config>
