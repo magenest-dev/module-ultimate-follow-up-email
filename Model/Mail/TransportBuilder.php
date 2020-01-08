@@ -103,49 +103,17 @@ class TransportBuilder extends \Magento\Framework\Mail\Template\TransportBuilder
         }
     }
 
-
-
-
-    public function prepare()
-    {
-        return $this->prepareMessage();
-    }
-
-
     public function setMessageContent($body, $subject)
     {
         $this->body    = $body;
         $this->subject = $subject;
     }
 
-
-    public function setTemplateId($templateId){
-        $this->templateId = $templateId;
-    }
-
-
     public function getTemplateChoosed($templateId){
 
         $templateData = $this->templateFactory->get($templateId);
         $templateData->setVars($this->templateVars)->setOptions($this->templateOptions);
         return $templateData;
-    }
-
-
-    /**
-     * Prepare message
-     *
-     * @return $this
-     */
-    protected function prepareMessage()
-    {
-        $this->message->setMessageType('text/html');
-        $template = $this->getTemplateChoosed($this->templateId);
-        $body = $template->processTemplate();
-        $this->message->setBodyHtml($body);
-
-        $this->message->setSubject(html_entity_decode($template->getSubject(), ENT_QUOTES));
-        return $this;
     }
 
     public function reset()
