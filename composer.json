@@ -1,5 +1,5 @@
 {
-    "name": "magenest/module-ultimate-follow-up-email",
+    "name": "philippeaellig/module-ultimate-follow-up-email",
     "description": "N/A",
     "require": {
         "magenest/core": "*"
