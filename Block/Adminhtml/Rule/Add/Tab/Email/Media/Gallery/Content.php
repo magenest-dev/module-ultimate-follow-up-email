@@ -89,8 +89,7 @@ class Content extends \Magento\Backend\Block\Widget
         $this->unsetChild('new-video');
 
         $this->getUploader()->getConfig()->setUrl(
-            //  $this->_urlBuilder->addSessionParam()->getUrl('demo/media/upload')
-            $this->_urlBuilder->addSessionParam()->getUrl('ultimatefollowupemail/rule/upload')
+            $this->_urlBuilder->getUrl('ultimatefollowupemail/rule/upload')
         )->setFileField(
             'image'
         )->setFilters(
