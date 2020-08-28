@@ -74,8 +74,8 @@ class Post extends Rule
                         $template = $email['template'];
 
                         $day = isset($email['day'])?$email['day']:"";
-                        $hour = isset($email['day'])?$email['day']:"";
-                        $min = isset($email['day'])?$email['day']:"";
+                        $hour = isset($email['hour'])?$email['hour']:"";
+                        $min = isset($email['min'])?$email['min']:"";
 
                         $email = [
                             'template' => $template,
