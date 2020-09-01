@@ -5,7 +5,7 @@
         "magenest/core": "*"
     },
     "type": "magento2-module",
-    "version": "100.3.3",
+    "version": "100.3.4",
     "license": [
         "BSD-3-Clause"
     ],
