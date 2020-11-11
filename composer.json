@@ -5,15 +5,13 @@
         "magenest/core": "*"
     },
     "type": "magento2-module",
-    "version": "100.3.1",
+    "version": "100.3.4",
     "license": [
         "BSD-3-Clause"
     ],
-    "authors": [
-        {
-            "name": "Magenest JSC"
-        }
-    ],
+    "authors": [{
+        "name": "Magenest JSC"
+    }],
     "autoload": {
         "files": [
             "registration.php"

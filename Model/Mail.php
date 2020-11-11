@@ -235,7 +235,7 @@ class Mail extends \Magento\Framework\Model\AbstractModel
             $this->_magenestTransportBuilder->addBcc($bccMail);
         }
 
-        $this->_magenestTransportBuilder->setTemplateId((int)$templateId);
+        $this->_magenestTransportBuilder->setTemplateIdentifier((int)$templateId);
 
         /** @var  $transport \Magento\Framework\Mail\TransportInterface */
         if(method_exists($this->_magenestTransportBuilder->getMessage(),'createAttachment')) {
